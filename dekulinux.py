@@ -4,7 +4,8 @@ from gi.repository import Gtk, Gdk
 
 class MyApp(Gtk.Window):
     def __init__(self):
-        super().__init__()
+        super().__init__(title="Deku Linux App")
+
 
         self.connect("destroy", Gtk.main_quit)
         self.set_default_size(800, 600)
