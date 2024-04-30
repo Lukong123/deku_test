@@ -81,6 +81,7 @@ class MyApp(Gtk.Window):
         # # Horizontal line widget
         line = HorizontalLine()
         main_box.pack_end(line, False, False, 0)
+        
 
         # Container 1
         container1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
@@ -116,6 +117,12 @@ class MyApp(Gtk.Window):
 
         self.show_all()
 
+        screen = self.get_screen()
+        max_width = screen.get_width()
+        self.set_size_request(max_width, -1)
+
+
+
     def on_modem_1_click(self, widget, event):
         print("Modem 1 clicked!")
 
@@ -124,36 +131,10 @@ class MyApp(Gtk.Window):
 
     def apply_css(self):
         css_provider = Gtk.CssProvider()
+        css_path = "utils/styles/styles.css"
 
-        # Define the CSS rules
-        css = """
-            #title-label {
-                font-weight: bold;
-            }
-
-            box#nav-bar {
-                background-color: green;
-            }
-
-            .nav-bar {
-                background-color: green;
-                padding: 10px;
-            }
-
-            box#center-box {
-                border: 1px solid green;
-                padding: 50px;
-                margin-top: 50px;
-            }
-
-            label#modem-label {
-    margin-left: 10px;  /* Adjust the margin value as per your preference */
-}
-
-        """
-
-        # Load the CSS rules into the provider
-        css_provider.load_from_data(css.encode())
+       # Load the CSS rules into the provider
+        css_provider.load_from_path(css_path)
 
         # Apply the CSS provider to the window
         screen = Gdk.Screen.get_default()

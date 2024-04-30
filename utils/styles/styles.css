@@ -1,0 +1,39 @@
+#title-label {
+    font-weight: bold;
+}
+
+#nav-bar {
+    background-color: lightskyblue;
+}
+
+
+#center-box {
+    border: 1px solid green;
+    padding: 50px;
+    margin-top: 50px;
+}
+
+#center-box-modem {
+    border: 1px solid lightblue;
+    padding: 50px;
+    margin: 50px;
+}
+
+#box-info{
+    margin: 50px;
+    padding: 50px;
+    
+}
+
+#box-info-header{
+    font-weight: 700;
+}
+
+label#modem-label {
+margin-left: 10px;  /* Adjust the margin value as per your preference */
+}
+
+
+#sidebar{
+    background-color: wheat;
+}
