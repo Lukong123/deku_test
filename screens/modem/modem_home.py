@@ -30,8 +30,8 @@ class ModemWindow(Gtk.Window):
         home_modem = Gtk.Label()
         home_modem.set_text("Home Modem")
         home_modem.set_name("side_label")
-        home_modem.set_margin_bottom(10)
-        home_modem.set_margin_top(10)
+        home_modem.set_margin_bottom(8)
+        home_modem.set_margin_top(60)
         sidebar_top.pack_start(home_modem, False, False, 0)
 
         line = HorizontalLine()
@@ -41,8 +41,8 @@ class ModemWindow(Gtk.Window):
         send_label = Gtk.Label()
         send_label.set_text("Send")
         send_label.set_name("side_label")
-        send_label.set_margin_bottom(10)
-        # send_label.set_margin_top(10)
+        send_label.set_margin_bottom(8)
+        send_label.set_margin_top(8)
         sidebar_top.pack_start(send_label, False, False, 0)
 
 
@@ -53,8 +53,8 @@ class ModemWindow(Gtk.Window):
         receive_label = Gtk.Label()
         receive_label.set_text("Incoming")
         receive_label.set_name("side_label")
-        receive_label.set_margin_bottom(10)
-        receive_label.set_margin_top(10)
+        receive_label.set_margin_bottom(8)
+        receive_label.set_margin_top(8)
         sidebar_top.pack_start(receive_label, False, False, 0)
 
 
@@ -65,8 +65,8 @@ class ModemWindow(Gtk.Window):
         outgoing_label = Gtk.Label()
         outgoing_label.set_text("Outgoing ")
         outgoing_label.set_name("side_label")
-        outgoing_label.set_margin_bottom(10)
-        outgoing_label.set_margin_top(10)
+        outgoing_label.set_margin_bottom(8)
+        outgoing_label.set_margin_top(8)
         sidebar_top.pack_start(outgoing_label, False, False, 0)
 
 
@@ -77,8 +77,8 @@ class ModemWindow(Gtk.Window):
         failed_label = Gtk.Label()
         failed_label.set_text("Failed ")
         failed_label.set_name("side_label")
-        failed_label.set_margin_bottom(10)
-        failed_label.set_margin_top(10)
+        failed_label.set_margin_bottom(8)
+        failed_label.set_margin_top(8)
         sidebar_top.pack_start(failed_label, False, False, 0)
 
 
@@ -89,8 +89,8 @@ class ModemWindow(Gtk.Window):
         encrypted_label = Gtk.Label()
         encrypted_label.set_text("Encrypted")
         encrypted_label.set_name("side_label")
-        encrypted_label.set_margin_bottom(80)
-        encrypted_label.set_margin_top(10)
+        encrypted_label.set_margin_bottom(40)
+        encrypted_label.set_margin_top(8)
         sidebar_top.pack_start(encrypted_label, False, False, 0)
 
         line = HorizontalLine()
@@ -103,8 +103,8 @@ class ModemWindow(Gtk.Window):
         message_forwarding = Gtk.Label()
         message_forwarding.set_text("Message Forwarding")
         message_forwarding.set_name("side_label")
-        message_forwarding.set_margin_bottom(10)
-        message_forwarding.set_margin_top(40)
+        message_forwarding.set_margin_bottom(8)
+        message_forwarding.set_margin_top(15)
         sidebar_top.pack_start(message_forwarding, False, False, 0)
 
 
@@ -115,8 +115,8 @@ class ModemWindow(Gtk.Window):
         export = Gtk.Label()
         export.set_text("Export")
         export.set_name("side_label")
-        export.set_margin_bottom(10)
-        export.set_margin_top(10)
+        export.set_margin_bottom(8)
+        export.set_margin_top(8)
         sidebar_top.pack_start(export, False, False, 0)
     
 
@@ -127,18 +127,9 @@ class ModemWindow(Gtk.Window):
         about = Gtk.Label()
         about.set_text("About ")
         about.set_name("side_label")
-        about.set_margin_bottom(10)
-        about.set_margin_top(10)
+        about.set_margin_bottom(8)
+        about.set_margin_top(8)
         sidebar_top.pack_start(about, False, False, 0)
-
-
-
-
-
-
-
-
-
 
         # sidebar_content = Gtk.Label()
         # sidebar_content.set_text("Sidebar")
@@ -164,7 +155,7 @@ class ModemWindow(Gtk.Window):
         # Adjusting navbar
         title_label = Gtk.Label()
         title_label.set_text("Deku Linux")
-        title_label.set_name("title-label")  # Set a custom CSS name for the label
+        title_label.set_name("title-label")
         left_box.pack_start(title_label, False, False, 0)
 
         # Create a box for the right side of the navigation bar
@@ -206,9 +197,12 @@ class ModemWindow(Gtk.Window):
         container2.set_homogeneous(False)
         container2.set_border_width(10)
 
+        container2.set_valign(Gtk.Align.CENTER)
+        container2.set_halign(Gtk.Align.CENTER)
+
         # grid for usb modem box information
         grid = Gtk.Grid()
-        grid.set_column_spacing(30)
+        grid.set_column_spacing(80)
         grid.set_name("box-info")
         container2.pack_start(grid, True, True, 0)
 
@@ -241,7 +235,7 @@ class ModemWindow(Gtk.Window):
         grid.attach(header_a, 0, 0, 1, 1)
 
         header_b = Gtk.Label()
-        header_b.set_text("Column B")
+        header_b.set_text("Box Info")
         header_b.set_name("box-info-header")
         grid.attach(header_b, 1, 0, 1, 1)
 
@@ -261,29 +255,21 @@ class ModemWindow(Gtk.Window):
 
         # floating action button
         fab_button = Gtk.Button()
-        fab_button.set_size_request(56, 56)
         fab_button.set_tooltip_text("Compose")
+        fab_button.get_style_context().add_class("fab-button")
 
-        # message icon
         message_icon = Gtk.Image.new_from_icon_name("mail-send-symbolic", Gtk.IconSize.BUTTON)
-
         fab_button.add(message_icon)
-        content_area.pack_end(fab_button, 0, 0, 0)
-
-        # # position
-        # content_area.put(fab_buton, Gtk.Window.get_screen(self).get_width() - fab_button.get_size_request()[0]-20,
-        # Gtk.Window.get_screen(self).get_height() - fab_button.get_size_request()[1]- 20)
-
+        fab_button.set_size_request(50, 50)
+        alignment = Gtk.Alignment.new(1, 0.8, 0, 0)
+        alignment.set_padding(0, 50, 0, 50) 
+        alignment.add(fab_button)
+        content_area.pack_end(alignment, False, False, 0)
 
         # Apply custom CSS styling
         self.apply_css()
 
         self.show_all()
-
-        # screen = self.get_screen()
-        # max_width = screen.get_width()
-        # self.set_size_request(max_width, -1)
-
 
     def apply_css(self):
         css_provider = Gtk.CssProvider()
