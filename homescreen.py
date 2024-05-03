@@ -20,7 +20,7 @@ class MyApp(Gtk.Window):
         nav_bar = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=0)
         nav_bar.set_size_request(-1, 50)
         nav_bar.set_homogeneous(False)
-        nav_bar.set_border_width(10)
+        # nav_bar.set_border_width(10)
         nav_bar.set_name("nav-bar")  # Set the CSS class name
 
         main_box.pack_start(nav_bar, False, False, 0)

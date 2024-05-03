@@ -9,7 +9,7 @@
 
 
 #center-box {
-    border: 1px solid green;
+    border: 1px solid darkblue;
     padding: 50px;
     margin-top: 50px;
 }
@@ -41,6 +41,8 @@ margin-left: 10px;
 
 #side_label{
     color: white;
+    background-color: darkblue;
+    border: 1px solid darkblue;
 }
 
 .fab-button {
@@ -49,4 +51,22 @@ margin-left: 10px;
     background-color: darkblue;
     border: none;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#active{
+    color: lawngreen;
+
+}
+
+
+/* Send Messsage */
+#center-box-message {
+    border: 1px solid darkblue;
+    /* padding: 70px; */
+    margin: 10px;
+}
+
+
+#send_btn{
+    background-color: darkblue;
 }
